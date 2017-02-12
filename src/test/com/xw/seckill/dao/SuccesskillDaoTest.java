@@ -3,6 +3,7 @@ package com.xw.seckill.dao;
 import com.xw.seckill.entity.SuccessKilled;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -16,7 +17,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring/spring-dao.xml")
 public class SuccesskillDaoTest {
-    @Resource
+    @Autowired
     SuccesskillDao successkillDao;
     @Test
     public void insertSuccessKilled() throws Exception {
@@ -29,7 +30,8 @@ public class SuccesskillDaoTest {
     @Test
     public void queryByIdWithSuccessKill() throws Exception {
         long seckillId = 1000L;
-        SuccessKilled successKilled = successkillDao.queryByIdWithSuccessKilled(seckillId);
+        long userPhone = 15198763370L;
+        SuccessKilled successKilled = successkillDao.queryByIdWithSuccessKilled(seckillId,userPhone);
         System.out.println(successKilled);
         System.out.println(successKilled.getSeckillId());
 

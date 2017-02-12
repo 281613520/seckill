@@ -21,7 +21,7 @@ public class SeckillExecution {
         this.stateInfo = stateEnum.getStateInfo();
         this.successKilled = successKilled;
     }
-//秒杀失
+//秒杀失败
     public SeckillExecution(long seckillId, SeckillStateEnum stateEnum) {
         this.seckillId = seckillId;
         this.state = stateEnum.getState();
