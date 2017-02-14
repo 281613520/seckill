@@ -29,7 +29,7 @@ public class SeckillController {
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public String list(Model model){
         List<SecKill> secKillList = seckillService.getSeckillList();
-        model.addAttribute("seckillList",secKillList);
+        model.addAttribute("list",secKillList);
         return "list";
     }
 
@@ -89,6 +89,7 @@ public class SeckillController {
     }
 
     @RequestMapping(value = "/time/now",method = RequestMethod.GET)
+    @ResponseBody
     public SeckillResult<Long> date(){
         Date date = new Date();
         return new SeckillResult<Long>(true,date.getTime());
