@@ -10,14 +10,14 @@ public class SecKill {
     private String name;
     private int number;
     private Date startTime;
-    private Date endtTime;
+    private Date endTime;
     private Date createTime;
 
     public long getSeckillId() {
         return seckillId;
     }
 
-    public void setSeckillId(long seckillid) {
+    public void setSeckillId(long seckillId) {
         this.seckillId = seckillId;
     }
 
@@ -45,12 +45,12 @@ public class SecKill {
         this.startTime = startTime;
     }
 
-    public Date getEndtTime() {
-        return endtTime;
+    public Date getEndTime() {
+        return endTime;
     }
 
-    public void setEndtTime(Date endtTime) {
-        this.endtTime = endtTime;
+    public void setEndTime(Date endtTime) {
+        this.endTime = endtTime;
     }
 
     public Date getCreateTime() {
@@ -68,7 +68,7 @@ public class SecKill {
                 ", name='" + name + '\'' +
                 ", number=" + number +
                 ", startTime=" + startTime +
-                ", endtTime=" + endtTime +
+                ", endtTime=" + endTime +
                 ", createTime=" + createTime +
                 '}';
     }
