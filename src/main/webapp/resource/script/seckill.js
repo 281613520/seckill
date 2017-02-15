@@ -1,5 +1,5 @@
 //存放主要交互逻辑的js代码
-// javascript 模块化(package.类.方法)
+// javascript 模块化(package.类.方法  )
 
 var seckill = {
 

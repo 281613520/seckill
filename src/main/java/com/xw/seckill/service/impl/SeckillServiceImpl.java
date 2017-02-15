@@ -32,7 +32,7 @@ public class SeckillServiceImpl implements SeckillService{
     @Autowired
     private SuccesskillDao successkillDao;
     //盐值
-    private final String salt = "ssssssss";
+    private final String salt = "qwerasdzxc";
 
     public List<SecKill> getSeckillList() {
         return seckillDao.queryAll(0,4);
