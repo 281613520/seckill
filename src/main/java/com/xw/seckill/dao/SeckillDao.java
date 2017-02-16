@@ -10,14 +10,24 @@ import java.util.List;
  * Created by AnKh on 2017/2/5.
  */
 public interface SeckillDao {
-    /*
-    * 减库存
-    * return 如果影响行数> 1 表示更新记录的行数*/
+    /**
+     * 减库存
+     * @param seckillId
+     * @param killTime
+     * @return 如果影响行数> 1 表示更新记录的行数 返回影响行数
+     */
     int reduceNumber(@Param("seckillId") long seckillId, @Param("killTime") Date killTime);
-    /*
-    * 查找   */
+    /**
+     * 查找
+     * @param seckillId
+     * @return
+     */
     SecKill queryById(long seckillId);
-    /*列表
-    * 根据偏移量查找秒杀商品列表*/
+    /**
+     * 列表 根据偏移量查找秒杀商品列表
+     * @param offset
+     * @param limit
+     * @return
+     */
     List<SecKill> queryAll(@Param("offset") int offset, @Param("limit") int limit);
 }

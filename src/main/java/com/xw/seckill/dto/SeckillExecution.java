@@ -14,14 +14,14 @@ public class SeckillExecution {
     private String stateInfo;
 
     private SuccessKilled successKilled;
-//秒杀成功
+    //秒杀成功
     public SeckillExecution(long seckillId, SeckillStateEnum stateEnum, SuccessKilled successKilled) {
         this.seckillId = seckillId;
         this.state = stateEnum.getState();
         this.stateInfo = stateEnum.getStateInfo();
         this.successKilled = successKilled;
     }
-//秒杀失败
+    //秒杀失败
     public SeckillExecution(long seckillId, SeckillStateEnum stateEnum) {
         this.seckillId = seckillId;
         this.state = stateEnum.getState();

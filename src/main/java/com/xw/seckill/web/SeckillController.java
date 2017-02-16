@@ -25,7 +25,7 @@ public class SeckillController {
 
     @Autowired
     SeckillService seckillService;
-
+    
     @RequestMapping(value = "/list",method = RequestMethod.GET)
     public String list(Model model){
         List<SecKill> secKillList = seckillService.getSeckillList();
@@ -71,7 +71,7 @@ public class SeckillController {
                                                   @CookieValue(value = "killPhone",required = false)Long phone){
         if(phone == null) return new SeckillResult<SeckillExecution>(false,"未注册");
 
-        SeckillResult<SeckillExecution> result;
+        SeckillResult<SeckillExecution> result;//这个result是干嘛的？
 
         try{
             SeckillExecution seckillExecution = seckillService.executeSeckill(seckillId,phone,md5);
@@ -89,8 +89,7 @@ public class SeckillController {
     }
 
     @RequestMapping(value = "/time/now",
-            method = RequestMethod.GET,
-            produces = "application/json;charset=utf-8")
+            method = RequestMethod.GET)
     @ResponseBody
     public SeckillResult<Long> date(){
         Date date = new Date();

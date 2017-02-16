@@ -38,7 +38,7 @@
         <!--扫描sql文件，mapper需要的xml-->
         <property name="mapperLocations" value="classpath:mapper/*.xml"/>
     </bean>
-    <!--4。配置扫描DAO接口包，动态实现DAP接口，注入spring容器-->
+    <!--4。配置扫描DAO接口包，动态实现DAO接口，注入spring容器-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--注入sqlSessionFactory-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
