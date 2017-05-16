@@ -3,6 +3,7 @@ package com.xw.seckill.dao;
 import com.xw.seckill.entity.SecKill;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -22,7 +23,7 @@ import static org.junit.Assert.*;
 //spring配置文件
 @ContextConfiguration({"classpath:spring/spring-dao.xml"})
 public class SeckillDaoTest {
-    @Resource
+    @Autowired
     private SeckillDao seckillDao;
     @Test
     public void reduceNumber() throws Exception {

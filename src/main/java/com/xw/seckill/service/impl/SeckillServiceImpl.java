@@ -1,5 +1,6 @@
 package com.xw.seckill.service.impl;
 
+import com.xw.seckill.cache.RedisDao;
 import com.xw.seckill.dao.SeckillDao;
 import com.xw.seckill.dao.SuccesskillDao;
 import com.xw.seckill.dto.Exposer;
@@ -31,6 +32,8 @@ public class SeckillServiceImpl implements SeckillService{
     private SeckillDao seckillDao;
     @Autowired
     private SuccesskillDao successkillDao;
+    @Autowired
+    private RedisDao redisDao;
     //盐值
     private final String salt = "qwerasdzxc";
 
@@ -43,7 +46,16 @@ public class SeckillServiceImpl implements SeckillService{
     }
 
     public Exposer exportSeckillUrl(long seckillId) {
-        SecKill secKill = seckillDao.queryById(seckillId);
+        SecKill secKill = redisDao.getSeckill(seckillId);
+        if(secKill == null){
+            secKill = seckillDao.queryById(seckillId);
+            if (secKill == null) {//说明查不到这个秒杀产品的记录
+                return new Exposer(false, seckillId);
+            }else {
+                //3,放入redis
+                redisDao.putSeckill(secKill);
+            }
+        }
 
         if(secKill == null) return new Exposer(false,seckillId);
         Date startTime = secKill.getStartTime();

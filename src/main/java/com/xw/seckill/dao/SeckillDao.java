@@ -2,13 +2,16 @@ package com.xw.seckill.dao;
 
 import com.xw.seckill.entity.SecKill;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 
 /**
  * Created by AnKh on 2017/2/5.
  */
+@Repository
 public interface SeckillDao {
     /**
      * 减库存
